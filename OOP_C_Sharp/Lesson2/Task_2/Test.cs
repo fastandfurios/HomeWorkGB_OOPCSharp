@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson2.Task_1
+namespace Lesson2.Task_2
 {
     internal sealed class Test
     {
         public void Run()
         {
             var account1 = new BankAccount();
-            account1.SetIdAccount(1);
+            BankAccount.CreateIdAccount();
             account1.SetBalanceAccount(145);
             account1.SetTypeAccount(nameof(BankAccount.TypeAccount.расчетный));
 
@@ -21,12 +21,22 @@ namespace Lesson2.Task_1
             Console.WriteLine();
 
             var account2 = new BankAccount();
-            account2.SetIdAccount(2);
+            BankAccount.CreateIdAccount();
             account2.SetBalanceAccount(2134);
             account2.SetTypeAccount(nameof(BankAccount.TypeAccount.сберегательный));
 
             Console.WriteLine("Счет успешно создан!");
             Console.WriteLine($"Номер счета: {account2.GetIdAccount()}\nБаланс счета: {account2.GetBalanceAccount()}\nТип счета: {account2.GetTypeAccount()}");
+
+            Console.WriteLine();
+
+            var account3 = new BankAccount();
+            BankAccount.CreateIdAccount();
+            account3.SetBalanceAccount(6847);
+            account3.SetTypeAccount(nameof(BankAccount.TypeAccount.кредитный));
+
+            Console.WriteLine("Счет успешно создан!");
+            Console.WriteLine($"Номер счета: {account3.GetIdAccount()}\nБаланс счета: {account3.GetBalanceAccount()}\nТип счета: {account3.GetTypeAccount()}");
         }
     }
 }
