@@ -1,4 +1,5 @@
 ﻿using System;
+using Lesson2.Task_1;
 
 namespace Lesson2
 {
@@ -6,7 +7,9 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var bank = new BankAccount();
+            bank.SetDataAccount();
+            bank.ReadDataAccount();
         }
     }
 }
