@@ -1,5 +1,5 @@
 ﻿using System;
-using Lesson2.Task_1;
+using Lesson2.Task_2;
 
 namespace Lesson2
 {
@@ -7,9 +7,7 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            var bank = new BankAccount();
-            bank.SetDataAccount();
-            bank.ReadDataAccount();
+           
         }
     }
 }
