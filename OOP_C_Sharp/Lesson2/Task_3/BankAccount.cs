@@ -11,9 +11,8 @@ namespace Lesson2.Task_3
     {
         private static int _idAccount;
         private decimal _balanceAccount;
-        private string _typeAccount = nameof(BankAccount.TypeAccount.расчетный);
-        public enum TypeAccount { расчетный, кредитный, сберегательный };
-
+        private string _typeAccount = nameof(TypesAccount.расчетный);
+        
         public BankAccount(decimal balanceAccount)
         {
             _balanceAccount = balanceAccount;

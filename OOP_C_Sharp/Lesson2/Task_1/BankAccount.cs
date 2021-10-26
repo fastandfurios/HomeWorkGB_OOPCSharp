@@ -12,7 +12,6 @@ namespace Lesson2.Task_1
         private int _idAccount;
         private decimal _balanceAccount;
         private string _typeAccount;
-        public enum TypeAccount { расчетный, кредитный, сберегательный };
 
         /// <summary> Изменяет номер счета </summary>
         /// <param name="value"></param>

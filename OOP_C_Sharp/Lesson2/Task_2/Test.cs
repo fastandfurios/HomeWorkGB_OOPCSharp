@@ -13,7 +13,7 @@ namespace Lesson2.Task_2
             var account1 = new BankAccount();
             BankAccount.CreateIdAccount();
             account1.SetBalanceAccount(145);
-            account1.SetTypeAccount(nameof(BankAccount.TypeAccount.расчетный));
+            account1.SetTypeAccount(nameof(TypesAccount.расчетный));
 
             Console.WriteLine("Счет успешно создан!");
             Console.WriteLine($"Номер счета: {account1.GetIdAccount()}\nБаланс счета: {account1.GetBalanceAccount()}\nТип счета: {account1.GetTypeAccount()}");
@@ -23,7 +23,7 @@ namespace Lesson2.Task_2
             var account2 = new BankAccount();
             BankAccount.CreateIdAccount();
             account2.SetBalanceAccount(2134);
-            account2.SetTypeAccount(nameof(BankAccount.TypeAccount.сберегательный));
+            account2.SetTypeAccount(nameof(TypesAccount.сберегательный));
 
             Console.WriteLine("Счет успешно создан!");
             Console.WriteLine($"Номер счета: {account2.GetIdAccount()}\nБаланс счета: {account2.GetBalanceAccount()}\nТип счета: {account2.GetTypeAccount()}");
@@ -33,7 +33,7 @@ namespace Lesson2.Task_2
             var account3 = new BankAccount();
             BankAccount.CreateIdAccount();
             account3.SetBalanceAccount(6847);
-            account3.SetTypeAccount(nameof(BankAccount.TypeAccount.кредитный));
+            account3.SetTypeAccount(nameof(TypesAccount.кредитный));
 
             Console.WriteLine("Счет успешно создан!");
             Console.WriteLine($"Номер счета: {account3.GetIdAccount()}\nБаланс счета: {account3.GetBalanceAccount()}\nТип счета: {account3.GetTypeAccount()}");

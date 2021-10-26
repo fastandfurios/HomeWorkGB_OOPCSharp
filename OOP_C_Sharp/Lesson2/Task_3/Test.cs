@@ -17,14 +17,14 @@ namespace Lesson2.Task_3
 
             Console.WriteLine();
 
-            var account2 = new BankAccount(nameof(BankAccount.TypeAccount.расчетный));
+            var account2 = new BankAccount(nameof(TypesAccount.расчетный));
 
             Console.WriteLine("Счет успешно создан!");
             Console.WriteLine($"Номер счета: {account2.GetIdAccount()}\nБаланс счета: {account2.GetBalanceAccount()}\nТип счета: {account2.GetTypeAccount()}");
 
             Console.WriteLine();
 
-            var account3 = new BankAccount(4878, nameof(BankAccount.TypeAccount.сберегательный));
+            var account3 = new BankAccount(4878, nameof(TypesAccount.сберегательный));
 
             Console.WriteLine("Счет успешно создан!");
             Console.WriteLine($"Номер счета: {account3.GetIdAccount()}\nБаланс счета: {account3.GetBalanceAccount()}\nТип счета: {account3.GetTypeAccount()}");
