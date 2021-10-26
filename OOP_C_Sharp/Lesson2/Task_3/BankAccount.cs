@@ -11,57 +11,42 @@ namespace Lesson2.Task_3
     {
         private static int _idAccount;
         private decimal _balanceAccount;
-        private int _number;
-        private string _typeAccount;
+        private string _typeAccount = nameof(BankAccount.TypeAccount.расчетный);
         public enum TypeAccount { расчетный, кредитный, сберегательный };
 
         public BankAccount(decimal balanceAccount)
         {
             _balanceAccount = balanceAccount;
-            _typeAccount = nameof(TypeAccount.кредитный);
-            Count();
+            CreateIdAccount();
         }
 
         public BankAccount(string typeAccount)
         {
-            _balanceAccount = 5000;
             _typeAccount = typeAccount;
-            Count();
+            CreateIdAccount();
         }
 
         public BankAccount(decimal balanceAccount, string typeAccount)
         {
             _balanceAccount = balanceAccount;
             _typeAccount = typeAccount;
-            Count();
+            CreateIdAccount();
         }
 
-        /// <summary> Читает данные счета </summary>
-        public void ReadDataAccount()
-        {
-            Console.WriteLine("Счет успешно создан!");
-            Console.WriteLine($"Номер счета: {_idAccount}\nБаланс счета: {_balanceAccount}\nТип счета: {_typeAccount}");
-            Console.WriteLine();
-        }
+        /// <summary> Возвращает номер счета </summary>
+        /// <returns>номер счета</returns>
+        public int GetIdAccount() => _idAccount;
 
-        /// <summary> Перечисляет типы счета </summary>
-        private string Enumerable()
-        {
-            int i = 0;
-            var typeAcc = string.Empty;
+        /// <summary> Возвращает баланс счета </summary>
+        /// <returns>баланс счета</returns>
+        public decimal GetBalanceAccount() => _balanceAccount;
 
-            foreach (var typeAccount in Enum.GetNames(typeof(TypeAccount)))
-            {
-                Console.WriteLine($"{++i} {typeAccount}");
-                if (i == _number)
-                {
-                    typeAcc = typeAccount;
-                }
-            }
+        /// <summary> Возвращает тип счета </summary>
+        /// <returns>тип счета</returns>
+        public string GetTypeAccount() => _typeAccount;
 
-            return typeAcc;
-        }
-
-        private static int Count() => ++_idAccount;
+        /// <summary> Создает уникальные номера счета </summary>
+        /// <returns>уникальный номер счета</returns>
+        private static int CreateIdAccount() => ++_idAccount;
     }
 }
