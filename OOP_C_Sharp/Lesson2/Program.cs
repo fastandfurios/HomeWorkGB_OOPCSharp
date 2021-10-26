@@ -1,5 +1,5 @@
 ﻿using System;
-using Lesson2.Task_4;
+using Lesson2.Task_Star;
 
 namespace Lesson2
 {
