@@ -10,7 +10,14 @@ namespace Lesson3.Task_2
     {
         internal string FlipLetters(string entry)
         {
-            return "";
+            var temp = string.Empty; 
+
+            for (int i = entry.Length - 1; i >= 0; i--)
+            {
+                temp += entry[i];
+            }
+
+            return temp;
         }
     }
 }
