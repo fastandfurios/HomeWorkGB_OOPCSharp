@@ -7,8 +7,10 @@ namespace Lesson3
     {
         static void Main(string[] args)
         {
-            var test = new Test();
-            test.Run();
+            //Задача 1
+            //var test = new Test();
+            //test.Run();
+
         }
     }
 }

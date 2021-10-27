@@ -18,7 +18,10 @@ namespace Lesson3.Task_1
         private string _typeAccount;
         public string TypeAccount { get => _typeAccount; set => _typeAccount = value; }
 
-        public void Transfer(BankAccount account, decimal sum)
+        /// <summary> Переводит сумму на другой счет </summary>
+        /// <param name="account">банковский счет</param>
+        /// <param name="sum">сумма перевода</param>
+        internal void Transfer(BankAccount account, decimal sum)
         {
             if (WithdrawAccount(sum))
             {
@@ -27,19 +30,22 @@ namespace Lesson3.Task_1
             }
         }
 
-        public void DepositAccount(decimal balanceAccount) => _balanceAccount = balanceAccount;
+        /// <summary> Пополняет банковский счет </summary>
+        /// <param name="sum">сумма пополнения</param>
+        internal void DepositAccount(decimal sum) => _balanceAccount += sum;
 
-        public bool WithdrawAccount(decimal balanceAccount)
+        /// <summary> Снимает с банковского счета </summary>
+        /// <param name="sum">сумма снятия</param>
+        /// <returns>результат о выполнении</returns>
+        internal bool WithdrawAccount(decimal sum)
         {
-            if (_balanceAccount - balanceAccount >= 0)
+            if (_balanceAccount - sum >= 0)
             {
-                _balanceAccount -= balanceAccount;
+                _balanceAccount -= sum;
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }

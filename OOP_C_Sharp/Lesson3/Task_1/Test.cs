@@ -27,7 +27,7 @@ namespace Lesson3.Task_1
 
             Console.WriteLine();
 
-            account1.DepositAccount(100);
+            account1.DepositAccount(500);
 
             Console.WriteLine("Счет пополнен!");
             OutputChangedAccount(account1);
