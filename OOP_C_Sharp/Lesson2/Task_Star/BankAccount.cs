@@ -18,18 +18,22 @@ namespace Lesson2.Task_Star
         private string _typeAccount;
         public string TypeAccount { get => _typeAccount; set => _typeAccount = value; }
 
-        public void DepositAccount(decimal balanceAccount)
+        /// <summary> Пополняет счет </summary>
+        /// <param name="sum">сумма пополнения</param>
+        public void DepositAccount(decimal sum)
         {
             Console.WriteLine("Счет успешно пополнен! Текущий статус счета:");
-            _balanceAccount = balanceAccount;
+            _balanceAccount += sum;
         }
 
-        public void WithdrawAccount(decimal balanceAccount)
+        /// <summary> Снимает со счета </summary>
+        /// <param name="sum">сумма снятия</param>
+        public void WithdrawAccount(decimal sum)
         {
-            if (_balanceAccount - balanceAccount >= 0)
+            if (_balanceAccount - sum >= 0)
             {
                 Console.WriteLine("Снятие со счета! Текущий статус счета:");
-                _balanceAccount -= balanceAccount;
+                _balanceAccount -= sum;
             }
             else
             {
