@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lesson4.Task_1
 {
-    public class Building
+    internal sealed class Building
     {
         private static int _id;
         private decimal _height;
@@ -19,22 +19,22 @@ namespace Lesson4.Task_1
         public int NumberApartments { set => _numberApartments = Check(value); }
         public int NumberEntrances { set => _numberEntrances = Check(value); }
 
-        public Building() => GenerateId();
+        internal Building() => GenerateId();
 
         /// <summary> Генерирует номер здания </summary>
         private void GenerateId() => _id++;
 
         /// <summary> Возвращает высоту этажа здания </summary>
         /// <returns>высота этажа</returns>
-        public decimal GetHeightFloor() => _height / _floors;
+        internal decimal GetHeightFloor() => _height / _floors;
 
         /// <summary> Возвращает количество квартир в подъезде </summary>
         /// <returns>количество квартир в подъезде</returns>
-        public int GetNumberApartmentsEntrance() => _numberApartments / _numberEntrances;
+        internal int GetNumberApartmentsEntrance() => _numberApartments / _numberEntrances;
 
         /// <summary> Возвращает количество квартир на этаже </summary>
         /// <returns>количество квартир</returns>
-        public int GetNumberApartmentsFloor() => _numberApartments / _numberEntrances / _floors;
+        internal int GetNumberApartmentsFloor() => _numberApartments / _numberEntrances / _floors;
 
         /// <summary> Проверяет входящие данные на отрицательный значения и на 0. Если содержится отрицательное значение или 0, выдает исключение </summary>
         /// <typeparam name="T">тип значения</typeparam>

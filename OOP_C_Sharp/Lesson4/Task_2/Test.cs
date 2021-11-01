@@ -1,36 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Lesson4.Task_1
+namespace Lesson4.Task_2
 {
-    internal sealed class Test
+    public class Test
     {
         public void Run()
         {
-            var building_1 = new Building();
+            var building_1 = Creator.CreateBuild();
             building_1.Height = 27;
             building_1.Floors = 9;
             building_1.NumberApartments = 252;
             building_1.NumberEntrances = 7;
-            Print(building_1);
 
-            WriteLine();
+            var building_2 = Creator.CreateBuild();
 
-            var building_2 = new Building();
-            building_2.Height = 15;
-            building_2.Floors = 5;
-            building_2.NumberApartments = 80;
-            building_2.NumberEntrances = 4;
-            Print(building_2);
+            Creator.RemovedBuilding(2);
+
+            var building_3 = Creator.CreateBuild();
+            
+            foreach (DictionaryEntry building in Creator.Buildings)
+            {
+               WriteLine($"{building.Value}\n");
+            }
+
+            Print(building_3);
         }
 
         private void Print(Building building)
         {
-            WriteLine(building);
+            WriteLine($"Данные по дому: {building.Id}");
             WriteLine($"Высота этажа: {building.GetHeightFloor()} м");
             WriteLine($"Количество квартир на этаже: {building.GetNumberApartmentsFloor()}");
             WriteLine($"Количество квартир в подъезде: {building.GetNumberApartmentsEntrance()}");
