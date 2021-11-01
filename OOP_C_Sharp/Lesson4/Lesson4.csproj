@@ -8,4 +8,8 @@
 	<PropertyGroup>
 		<Nullable>warnings</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Buildings\Buildings.csproj" />
+	</ItemGroup>
 </Project>
