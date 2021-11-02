@@ -9,7 +9,7 @@ namespace Buildings
     public class Building
     {
         private static int _id;
-        private decimal _height;
+        private double _height;
         private int _floors;
         private int _numberApartments;
         private int _numberEntrances;
@@ -21,7 +21,7 @@ namespace Buildings
         /// <param name="floors">этажность</param>
         /// <param name="numberApartments">кол-во квартир</param>
         /// <param name="numberEntrances">кол-во подъездов</param>
-        private Building(decimal height, int floors, int numberApartments, int numberEntrances)
+        private Building(double height, int floors, int numberApartments, int numberEntrances)
         {
             _height = height;
             _floors = floors;
@@ -34,7 +34,7 @@ namespace Buildings
 
         /// <summary> Возвращает высоту этажа здания </summary>
         /// <returns>высота этажа</returns>
-        public decimal GetHeightFloor() => _height / _floors;
+        public double GetHeightFloor() => _height / _floors;
 
         /// <summary> Возвращает количество квартир в подъезде </summary>
         /// <returns>количество квартир в подъезде</returns>
@@ -55,7 +55,7 @@ namespace Buildings
             => $"Дом номер: {Id}\nВысота дома: {_height} м\nКоличество этажей: {_floors}\nКвартир: {_numberApartments}\nПодъездов: {_numberEntrances}";
 
         public int Id { get; }
-        public decimal Height { set => _height = Check(value); }
+        public double Height { set => _height = Check(value); }
         public int Floors { set => _floors = Check(value); }
         public int NumberApartments { set => _numberApartments = Check(value); }
         public int NumberEntrances { set => _numberEntrances = Check(value); }
