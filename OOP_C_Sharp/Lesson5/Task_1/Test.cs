@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace Lesson5.Task_1
 {
@@ -10,9 +11,47 @@ namespace Lesson5.Task_1
     {
         public void Run()
         {
-            var fraction = new Fraction(1, 2);
-            var f = new Fraction(1, 2);
-            Console.WriteLine(fraction);
+            var fractionFirst = new Fraction(1, 3);
+            var fractionSecond = new Fraction(2, 7);
+            var number = 4;
+            WriteLine($"{fractionFirst} + {number} = {fractionFirst + number}");
+            WriteLine($"{number} + {fractionFirst} = {number + fractionFirst}");
+            WriteLine($"{fractionFirst} + {fractionSecond} = {fractionFirst + fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} - {number} = {fractionFirst - number}");
+            WriteLine($"{number} - {fractionFirst} = {number - fractionFirst}");
+            WriteLine($"{fractionFirst} - {fractionSecond} = {fractionFirst - fractionSecond}\n");
+            
+            WriteLine($"{fractionFirst} * {number} = {fractionFirst * number}");
+            WriteLine($"{number} * {fractionFirst} = {number * fractionFirst}");
+            WriteLine($"{fractionFirst} * {fractionSecond} = {fractionFirst * fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} / {number} = {fractionFirst / number}");
+            WriteLine($"{number} / {fractionFirst} = {number / fractionFirst}");
+            WriteLine($"{fractionFirst} / {fractionSecond} = {fractionFirst / fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} % {number} = {fractionFirst % number}");
+            WriteLine($"{number} % {fractionFirst} = {number % fractionFirst}");
+            WriteLine($"{fractionFirst} % {fractionSecond} = {fractionFirst % fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} > {number} : {fractionFirst > number}");
+            WriteLine($"{number} > {fractionFirst} : {number > fractionFirst}");
+            WriteLine($"{fractionFirst} > {fractionSecond} : {fractionFirst > fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} >= {number} : {fractionFirst >= number}");
+            WriteLine($"{number} >= {fractionFirst} : {number >= fractionFirst}");
+            WriteLine($"{fractionFirst} >= {fractionSecond} : {fractionFirst >= fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} < {number} : {fractionFirst < number}");
+            WriteLine($"{number} < {fractionFirst} : {number < fractionFirst}");
+            WriteLine($"{fractionFirst} < {fractionSecond} : {fractionFirst < fractionSecond}\n");
+
+            WriteLine($"{fractionFirst} <= {number} : {fractionFirst <= number}");
+            WriteLine($"{number} <= {fractionFirst} : {number <= fractionFirst}");
+            WriteLine($"{fractionFirst} <= {fractionSecond} : {fractionFirst <= fractionSecond}\n");
+
+            WriteLine($"++ {fractionFirst} = {++fractionFirst}");
+            WriteLine($"-- {fractionSecond} = {--fractionSecond}");
         }
     }
 }
