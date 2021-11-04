@@ -10,9 +10,9 @@ namespace Lesson5.Task_1
     {
         public void Run()
         {
-            var fraction = new Fraction(1, 3);
+            var fraction = new Fraction(1, 2);
             var f = new Fraction(1, 2);
-            Console.WriteLine(fraction % f);
+            Console.WriteLine(fraction);
         }
     }
 }
