@@ -64,19 +64,19 @@ namespace Lesson5.Task_1
         #endregion
 
         #region operations Comparison
-        public static bool operator <(Fraction a, double b) => a._numerator / a._denominator < b ? true : false;
-        public static bool operator >(Fraction a, double b) => a._numerator / a._denominator > b ? true : false;
-        public static bool operator <(double a, Fraction b) => a < b._numerator / b._denominator ? true : false;
-        public static bool operator >(double a, Fraction b) => a > b._numerator / b._denominator ? true : false;
-        public static bool operator <(Fraction a, Fraction b) => a._numerator / a._denominator < b._numerator / b._denominator ? true : false;
-        public static bool operator >(Fraction a, Fraction b) => a._numerator / a._denominator > b._numerator / b._denominator ? true : false;
+        public static bool operator <(Fraction a, double b) => a._numerator / a._denominator < b;
+        public static bool operator >(Fraction a, double b) => a._numerator / a._denominator > b;
+        public static bool operator <(double a, Fraction b) => a < b._numerator / b._denominator;
+        public static bool operator >(double a, Fraction b) => a > b._numerator / b._denominator;
+        public static bool operator <(Fraction a, Fraction b) => a._numerator / a._denominator < b._numerator / b._denominator;
+        public static bool operator >(Fraction a, Fraction b) => a._numerator / a._denominator > b._numerator / b._denominator;
 
-        public static bool operator <=(Fraction a, double b) => a._numerator / a._denominator <= b ? true : false;
-        public static bool operator >=(Fraction a, double b) => a._numerator / a._denominator >= b ? true : false;
-        public static bool operator <=(double a, Fraction b) => a <= b._numerator / b._denominator ? true : false;
-        public static bool operator >=(double a, Fraction b) => a >= b._numerator / b._denominator ? true : false;
-        public static bool operator <=(Fraction a, Fraction b) => a._numerator / a._denominator <= b._numerator / b._denominator ? true : false;
-        public static bool operator >=(Fraction a, Fraction b) => a._numerator / a._denominator >= b._numerator / b._denominator ? true : false;
+        public static bool operator <=(Fraction a, double b) => a._numerator / a._denominator <= b;
+        public static bool operator >=(Fraction a, double b) => a._numerator / a._denominator >= b;
+        public static bool operator <=(double a, Fraction b) => a <= b._numerator / b._denominator;
+        public static bool operator >=(double a, Fraction b) => a >= b._numerator / b._denominator;
+        public static bool operator <=(Fraction a, Fraction b) => a._numerator / a._denominator <= b._numerator / b._denominator;
+        public static bool operator >=(Fraction a, Fraction b) => a._numerator / a._denominator >= b._numerator / b._denominator;
         #endregion
 
         #region operations Equality
@@ -88,8 +88,8 @@ namespace Lesson5.Task_1
 
         public static bool operator ==(Fraction a, double b) => (a._numerator / a._denominator).Equals(b);
         public static bool operator !=(Fraction a, double b) => !(a._numerator / a._denominator).Equals(b);
-        public static bool operator ==(double a, Fraction b) => (a).Equals(b._numerator / b._denominator);
-        public static bool operator !=(double a, Fraction b) => !(a).Equals(b._numerator / b._denominator);
+        public static bool operator ==(double a, Fraction b) => a.Equals(b._numerator / b._denominator);
+        public static bool operator !=(double a, Fraction b) => !a.Equals(b._numerator / b._denominator);
         public static bool operator ==(Fraction a, Fraction b) => (a._numerator / a._denominator).Equals(b._numerator / b._denominator);
         public static bool operator !=(Fraction a, Fraction b) => !(a._numerator / a._denominator).Equals(b._numerator / b._denominator);
         #endregion
