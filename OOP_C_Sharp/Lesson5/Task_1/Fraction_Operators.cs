@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Math;
 
 namespace Lesson5.Task_1
@@ -84,9 +80,30 @@ namespace Lesson5.Task_1
         #endregion
 
         #region operations Equality
+        public override bool Equals(object obj)
+            => obj!.ToString() == ToString();
 
-        
+        public override int GetHashCode()
+            => ToString().GetHashCode();
 
+        public static bool operator ==(Fraction a, double b) => (a._numerator / a._denominator).Equals(b);
+        public static bool operator !=(Fraction a, double b) => !(a._numerator / a._denominator).Equals(b);
+        public static bool operator ==(double a, Fraction b) => (a).Equals(b._numerator / b._denominator);
+        public static bool operator !=(double a, Fraction b) => !(a).Equals(b._numerator / b._denominator);
+        public static bool operator ==(Fraction a, Fraction b) => (a._numerator / a._denominator).Equals(b._numerator / b._denominator);
+        public static bool operator !=(Fraction a, Fraction b) => !(a._numerator / a._denominator).Equals(b._numerator / b._denominator);
+        #endregion
+
+        #region operations Explicit/Implicit
+        public static explicit operator Fraction(float a)
+        {
+            var f = (float)Round(a, 1);
+            return new(f * 10, 10);
+        } 
+        public static implicit operator float(Fraction a) => (float)(a._numerator / a._denominator);
+
+        public static explicit operator Fraction(int a) => new(a, 1);
+        public static implicit operator int(Fraction a) => (int)(a._numerator / a._denominator);
         #endregion
     }
 }
