@@ -11,8 +11,8 @@ namespace Lesson5.Task_1
     {
         public void Run()
         {
-            var fractionFirst = new Fraction(1, 3);
-            var fractionSecond = new Fraction(2, 7);
+            var fractionFirst = new Fraction(numerator: 1, denominator: 3);
+            var fractionSecond = new Fraction(numerator: 2, denominator: 7);
             var number = 4;
 
             WriteLine($"{fractionFirst} + {number} = {fractionFirst + number}");
