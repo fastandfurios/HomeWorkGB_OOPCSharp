@@ -11,16 +11,16 @@ namespace Lesson3
         static void Main(string[] args)
         {
             //Задача 1
-            //var test = new Test();
-            //test.Run();
+            var test = new Test();
+            test.Run();
 
             //Задача 2
             //var decision = new Decision();
             //Console.WriteLine(decision.FlipLetters("Привет мир!"));
 
             //Задача со звездочкой
-            var test = new Test_Star();
-            test.Run();
+            //var test = new Test_Star();
+            //test.Run();
         }
     }
 }

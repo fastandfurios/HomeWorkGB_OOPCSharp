@@ -10,13 +10,12 @@ namespace Lesson3.Task_1
 {
     internal sealed class BankAccount
     {
-        public int IdAccount { get; init; }
-
+        private static int _idAccount;
         private decimal _balanceAccount;
-        public decimal BalanceAccount => _balanceAccount;
 
-        private string _typeAccount;
-        public string TypeAccount { get => _typeAccount; set => _typeAccount = value; }
+        public BankAccount() => IdAccount = GenerateId();
+
+        private static int GenerateId() => ++_idAccount;
 
         /// <summary> Переводит сумму на другой счет </summary>
         /// <param name="account">банковский счет</param>
@@ -47,5 +46,9 @@ namespace Lesson3.Task_1
 
             return false;
         }
+
+        public int IdAccount { get; }
+        public decimal BalanceAccount => _balanceAccount;
+        public string TypeAccount { get; init; }
     }
 }

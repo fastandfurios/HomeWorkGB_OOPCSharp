@@ -11,16 +11,14 @@ namespace Lesson3.Task_1
     {
         public void Run()
         {
-            var account1 = new BankAccount { IdAccount = 1 };
-            account1.TypeAccount = nameof(TypesAccount.сберегательный);
-
+            var account1 = new BankAccount { TypeAccount = nameof(TypesAccount.сберегательный) };
+            
             Console.WriteLine("Счет успешно создан!");
             OutputChangedAccount(account1);
 
             Console.WriteLine();
 
-            var account2 = new BankAccount { IdAccount = 2 };
-            account2.TypeAccount = nameof(TypesAccount.кредитный);
+            var account2 = new BankAccount { TypeAccount = nameof(TypesAccount.кредитный) };
 
             Console.WriteLine("Счет успешно создан!");
             OutputChangedAccount(account2);
