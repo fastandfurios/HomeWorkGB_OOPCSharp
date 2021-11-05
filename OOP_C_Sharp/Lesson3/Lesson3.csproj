@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Content.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Task_2\" />
   </ItemGroup>
 
 </Project>
