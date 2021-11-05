@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Lesson6.Task_1
 {
-    internal sealed class BankAccount
+    internal sealed partial class BankAccount
     {
-        public int IdAccount { get; init; }
-
+        private static int _idAccount; 
         private decimal _balanceAccount;
-        public decimal BalanceAccount => _balanceAccount;
-
         private string _typeAccount;
-        public string TypeAccount { get => _typeAccount; set => _typeAccount = value; }
+
+        public BankAccount() => IdAccount = GenerateId();
+
+        private static int GenerateId() => ++_idAccount;
 
         /// <summary> Переводит сумму на другой счет </summary>
         /// <param name="account">банковский счет</param>
@@ -47,5 +47,11 @@ namespace Lesson6.Task_1
 
             return false;
         }
+
+        public int IdAccount { get; }
+        public string TypeAccount { init => _typeAccount = value; }
+
+        public override string ToString() 
+            => $"Номер счета: {IdAccount}\nБаланс счета: {_balanceAccount} ед.\nТип счета: {_typeAccount}";
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lesson6.Task_1;
+using static System.Console;
 
 namespace Lesson6.Task_1
 {
@@ -11,43 +12,44 @@ namespace Lesson6.Task_1
     {
         public void Run()
         {
-            var account1 = new BankAccount { IdAccount = 1 };
-            account1.TypeAccount = nameof(TypesAccount.сберегательный);
+            var account1 = new BankAccount
+            {
+                TypeAccount = nameof(TypesAccount.сберегательный)
+            };
 
-            Console.WriteLine("Счет успешно создан!");
-            OutputChangedAccount(account1);
+            WriteLine($"Счет успешно создан!\n{account1}");
 
-            Console.WriteLine();
+            WriteLine();
 
-            var account2 = new BankAccount { IdAccount = 2 };
-            account2.TypeAccount = nameof(TypesAccount.кредитный);
+            var account2 = new BankAccount
+            {
+                TypeAccount = nameof(TypesAccount.кредитный)
+            };
 
-            Console.WriteLine("Счет успешно создан!");
-            OutputChangedAccount(account2);
+            WriteLine($"Счет успешно создан!\n{account2}");
 
-            Console.WriteLine();
+            WriteLine();
 
             account1.DepositAccount(500);
 
-            Console.WriteLine("Счет пополнен!");
-            OutputChangedAccount(account1);
+            WriteLine($"Счет пополнен!\n{account1}");
             
-            Console.WriteLine();
+            WriteLine();
 
             account1.Transfer(account2, 50);
 
-            Console.WriteLine();
+            WriteLine();
 
-            Console.WriteLine("Текущий статус счета: ");
-            OutputChangedAccount(account1);
+            WriteLine($"Текущий статус счета:\n{account1}");
 
-            Console.WriteLine();
+            WriteLine();
 
-            Console.WriteLine("Текущий статус счета: ");
-            OutputChangedAccount(account2);
+            WriteLine($"Текущий статус счета:\n{account2}");
+
+            WriteLine();
+
+            WriteLine(account2 == account1);
+            WriteLine(account1 != account2);
         }
-
-        private void OutputChangedAccount(BankAccount account)
-            => Console.WriteLine($"Номер счета: {account.IdAccount}\nБаланс счета: {account.BalanceAccount} ед.\nТип счета: {account.TypeAccount}");
     }
 }
