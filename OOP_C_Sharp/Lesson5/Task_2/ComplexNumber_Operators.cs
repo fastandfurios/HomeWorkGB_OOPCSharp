@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lesson5.Task_2
 {
-    public readonly partial struct ComplexNumber
+    public readonly partial struct ComplexNumber : IEquatable<ComplexNumber>
     {
         #region operation Sum
         public static ComplexNumber operator +(in ComplexNumber x, in ComplexNumber y) => new(x._a + y._a, x._b + y._b);
@@ -26,11 +26,9 @@ namespace Lesson5.Task_2
         #endregion
 
         #region operations Equality
-        public override bool Equals(object obj)
-            => obj!.ToString() == ToString();
-
-        public override int GetHashCode()
-            => ToString().GetHashCode();
+        public override bool Equals(object obj) => obj is ComplexNumber other && Equals(other);
+        public override int GetHashCode() => HashCode.Combine(_a, _b);
+        public bool Equals(ComplexNumber other) => _a.Equals(other._a) && _b.Equals(other._b);
 
         public static bool operator ==(in ComplexNumber x, in ComplexNumber y) => x._a.Equals(y._a) && x._b.Equals(y._b);
         public static bool operator !=(in ComplexNumber x, in ComplexNumber y) => !x._a.Equals(y._a) && !x._b.Equals(y._b);
