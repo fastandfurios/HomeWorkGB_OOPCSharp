@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lesson6.Task_2
 {
-    public class Figure
+    public class Circle : Point
     {
-        public ConsoleColor Color { get; set; }
-        public bool IsVisible { get; set; }
+        
     }
 }
