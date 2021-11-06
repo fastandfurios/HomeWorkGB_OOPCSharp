@@ -3,7 +3,7 @@ using static System.Math;
 
 namespace Lesson5.Task_1
 {
-    public readonly partial struct Fraction
+    public readonly partial struct Fraction : IEquatable<Fraction>
     {
         #region operations Sum 
         public static Fraction operator +(in Fraction a, double b) => new(a._numerator * b + b * a._denominator, a._denominator);
@@ -80,11 +80,9 @@ namespace Lesson5.Task_1
         #endregion
 
         #region operations Equality
-        public override bool Equals(object obj)
-            => obj!.ToString() == ToString();
-
-        public override int GetHashCode()
-            => ToString().GetHashCode();
+        public override bool Equals(object obj) => obj is Fraction other && Equals(other);
+        public override int GetHashCode() => HashCode.Combine(_numerator, _denominator);
+        public bool Equals(Fraction other) => _numerator.Equals(other._numerator) && _denominator.Equals(other._denominator);
 
         public static bool operator ==(in Fraction a, double b) => (a._numerator / a._denominator).Equals(b);
         public static bool operator !=(in Fraction a, double b) => !(a._numerator / a._denominator).Equals(b);
