@@ -8,7 +8,17 @@ namespace Lesson6.Task_2
 {
     public class Figure
     {
-        public ConsoleColor Color { get; set; }
-        public bool IsVisible { get; set; }
+        private ConsoleColor _color;
+        private bool _isVisible;
+
+        protected virtual void Invertire(Figure figure, Point point)
+        {
+
+        }
+
+        public virtual void GetArea() { }
+
+        public virtual ConsoleColor Color { set => _color = value; }
+        public virtual bool IsVisible { set => _isVisible = value; }
     }
 }
