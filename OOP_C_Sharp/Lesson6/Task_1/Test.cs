@@ -10,7 +10,7 @@ namespace Lesson6.Task_1
 {
     internal sealed class Test
     {
-        public void Run()
+        public static void Run()
         {
             var account1 = new BankAccount
             {

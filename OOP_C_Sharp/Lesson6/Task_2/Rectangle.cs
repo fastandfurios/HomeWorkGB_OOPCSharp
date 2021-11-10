@@ -11,38 +11,46 @@ namespace Lesson6.Task_2
     {
         private ConsoleColor _color;
         private bool _isVisible;
-        private readonly IList<(double x, double y)> _vertexes = new List<(double, double)>();
+        private List<(double x, double y)> _vertexes = new(4);
+        private double _height, _width;
 
         public override string ToString()
-            => $"Прямоугольник с вершинами: {GetEntry()}";
+            => $"Прямоугольник с вершинами в точках: {GetEntry()}\nВысота = {_height}, ширина = {_width}\n" +
+               $"Цвет: {_color}, видимость: {_isVisible}\n" +
+               $"Площадь = {GetArea()}";
 
-        private string GetEntry()
+        private StringBuilder GetEntry()
         {
-            string entry = string.Empty;
+            var entry = new StringBuilder();
 
             foreach (var vertex in _vertexes)
             {
-                entry += vertex + " ";
+                entry.Append(vertex + " ");
             }
 
             return entry;
         }
 
-        public override void GetArea()
+        protected override double GetArea()
         {
             if (_vertexes.Count == 4)
             {
                 var a = _vertexes[0];
                 var b = _vertexes[1];
                 var c = _vertexes[2];
-                var width = Abs(Sqrt((b.y - a.y) * (b.y - a.y) + (b.x - a.x) * (b.x - a.x)));
-                var height = Abs(Sqrt((c.y - a.y) * (c.y - a.y) + (c.x - a.x) * (c.x - a.x)));
-                Console.WriteLine($"Площадь прямоугольника: {Round(width * height, 2)}");
+                _width = Abs(Sqrt((b.y - a.y) * (b.y - a.y) + (b.x - a.x) * (b.x - a.x)));
+                _height = Abs(Sqrt((c.y - a.y) * (c.y - a.y) + (c.x - a.x) * (c.x - a.x)));
+                return Round(_width * _height, 2);
             }
+
+            return base.GetArea();
         }
 
+        public override void AxisShift(int x = 0, int y = 0) 
+            => _vertexes = _vertexes.Select(vertex => (vertex.x+x,vertex.y+y)).ToList();
+
         public override ConsoleColor Color { set => _color = value; }
-        public override bool IsVisible { set => _isVisible = value; }
+        public override bool Visible { set => _isVisible = value; }
         public override (double, double) Coordinates { set => _vertexes.Add(value); }
     }
 }

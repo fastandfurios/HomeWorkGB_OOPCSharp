@@ -8,7 +8,7 @@ namespace Lesson6.Task_2
 {
     public class Test
     {
-        public void Run()
+        public static void Run()
         {
             Figure rectangle = new Rectangle();
             Point a = (Point)rectangle;
@@ -19,9 +19,24 @@ namespace Lesson6.Task_2
             b.Coordinates = (X: 3, Y: 1);
             c.Coordinates = (X: 1, Y: 2);
             d.Coordinates = (X: 3, Y: 2);
+            rectangle.Color = ConsoleColor.Red;
+            rectangle.Visible = true;
 
             Console.WriteLine(rectangle);
-            rectangle.GetArea();
+            rectangle.AxisShift(1,1);
+            Console.WriteLine(rectangle);
+
+            Figure circle = new Circle();
+            Point r = (Point)circle;
+            Point g = (Point)circle;
+            r.Coordinates = (X: 1, Y: 1);
+            g.Coordinates = (X: 6, Y: 1);
+            circle.Color = ConsoleColor.Green;
+            circle.Visible = true;
+
+            Console.WriteLine(circle);
+            circle.AxisShift(1,1);
+            Console.WriteLine(circle);
         }
     }
 }
