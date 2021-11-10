@@ -8,8 +8,8 @@ namespace Lesson6.Task_1
 {
     public enum TypesAccount
     {
-        расчетный,
-        кредитный,
-        сберегательный
+        payment,
+        credit,
+        savings
     }
 }

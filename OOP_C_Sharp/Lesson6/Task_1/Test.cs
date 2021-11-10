@@ -14,7 +14,7 @@ namespace Lesson6.Task_1
         {
             var account1 = new BankAccount
             {
-                TypeAccount = nameof(TypesAccount.сберегательный)
+                TypeAccount = nameof(TypesAccount.savings)
             };
 
             WriteLine($"Счет успешно создан!\n{account1}");
@@ -23,7 +23,7 @@ namespace Lesson6.Task_1
 
             var account2 = new BankAccount
             {
-                TypeAccount = nameof(TypesAccount.кредитный)
+                TypeAccount = nameof(TypesAccount.credit)
             };
 
             WriteLine($"Счет успешно создан!\n{account2}");
