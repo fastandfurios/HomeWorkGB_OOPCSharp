@@ -22,7 +22,7 @@ namespace Lesson6.Task_1
         /// <param name="sum">сумма перевода</param>
         internal void TransferTo(BankAccount account, decimal sum)
         {
-            if (WithdrawAccount(sum))
+            if (Withdrawal.WithdrawAccount(sum, _balanceAccount, out _balanceAccount))
             {
                 account.DepositAccount(sum);
                 Console.WriteLine($"Перевод на номер счета {account.IdAccount} выполнен успешно!");
@@ -33,18 +33,5 @@ namespace Lesson6.Task_1
         /// <param name="sum">сумма пополнения</param>
         internal void DepositAccount(decimal sum) => _balanceAccount += sum;
 
-        /// <summary> Снимает с банковского счета </summary>
-        /// <param name="sum">сумма снятия</param>
-        /// <returns>результат о выполнении</returns>
-        internal bool WithdrawAccount(decimal sum)
-        {
-            if (_balanceAccount - sum >= 0)
-            {
-                _balanceAccount -= sum;
-                return true;
-            }
-
-            return false;
-        }
     }
 }
