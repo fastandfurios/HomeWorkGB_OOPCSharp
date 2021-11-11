@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lesson6.Task_1;
-using static System.Console;
+﻿using static System.Console;
 
 namespace Lesson6.Task_1
 {
@@ -14,7 +8,7 @@ namespace Lesson6.Task_1
         {
             var account1 = new BankAccount
             {
-                TypeAccount = nameof(TypesAccount.savings)
+                TypeAccount = TypesAccount.Savings.ToString(),
             };
 
             WriteLine($"Счет успешно создан!\n{account1}");
@@ -23,7 +17,7 @@ namespace Lesson6.Task_1
 
             var account2 = new BankAccount
             {
-                TypeAccount = nameof(TypesAccount.credit)
+                TypeAccount = TypesAccount.Credit.ToString(),
             };
 
             WriteLine($"Счет успешно создан!\n{account2}");
@@ -36,7 +30,7 @@ namespace Lesson6.Task_1
             
             WriteLine();
 
-            account1.Transfer(account2, 50);
+            account1.TransferTo(account2, 50);
 
             WriteLine();
 

@@ -8,14 +8,19 @@ namespace Lesson6.Task_1
         private decimal _balanceAccount;
         private string _typeAccount;
 
+        private static int GenerateId() => ++_idAccount;
+        public int IdAccount { get; }
+        public string TypeAccount { init => _typeAccount = value; }
+
         public BankAccount() => IdAccount = GenerateId();
 
-        private static int GenerateId() => ++_idAccount;
+        public override string ToString()
+            => $"Номер счета: {IdAccount}\nБаланс счета: {_balanceAccount} ед.\nТип счета: {_typeAccount}";
 
         /// <summary> Переводит сумму на другой счет </summary>
         /// <param name="account">банковский счет</param>
         /// <param name="sum">сумма перевода</param>
-        internal void Transfer(BankAccount account, decimal sum)
+        internal void TransferTo(BankAccount account, decimal sum)
         {
             if (WithdrawAccount(sum))
             {
@@ -41,11 +46,5 @@ namespace Lesson6.Task_1
 
             return false;
         }
-
-        public int IdAccount { get; }
-        public string TypeAccount { init => _typeAccount = value; }
-
-        public override string ToString() 
-            => $"Номер счета: {IdAccount}\nБаланс счета: {_balanceAccount} ед.\nТип счета: {_typeAccount}";
     }
 }

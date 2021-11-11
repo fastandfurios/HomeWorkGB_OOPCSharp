@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lesson6.Task_1
 {
+    [Flags]
     public enum TypesAccount
     {
-        payment,
-        credit,
-        savings
+        Payment,
+        Credit,
+        Savings
     }
 }

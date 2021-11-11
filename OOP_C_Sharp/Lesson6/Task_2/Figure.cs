@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lesson6.Task_2
 {
@@ -16,14 +12,14 @@ namespace Lesson6.Task_2
         /// <param name="y">координата y</param>
         public virtual void AxisShift(int x = 0, int y = 0) { }
 
-        /// <summary> Возвращает площадь фигуры </summary>
-        protected virtual double GetArea() { throw new ArgumentException("Площадь не будет рассчитана, т.к. не были заданы все точки!"); }
-
         /// <summary> Меняет цвет фигуры </summary>
         /// <param name="color"></param>
         public virtual ConsoleColor Color { set => _color = value; }
         
         /// <summary> Meняет видимость фигуры </summary>
         public virtual bool Visible { set => _visible = value; }
+
+        /// <summary> Возвращает площадь фигуры </summary>
+        protected virtual double GetArea() { throw new ArgumentException("Площадь не будет рассчитана, т.к. не были заданы все точки!"); }
     }
 }

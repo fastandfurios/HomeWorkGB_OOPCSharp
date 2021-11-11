@@ -12,6 +12,10 @@ namespace Lesson6.Task_2
         private List<(double x, double y)> _coordinates = new(2);
         private double _radius;
 
+        public override ConsoleColor Color { set => _color = value; }
+        public override bool Visible { set => _visible = value; }
+        public override (double X, double Y) Coordinates { set => _coordinates.Add(value); }
+
         public override string ToString()
             => $"Окружность с центром в точке с координатами: {_coordinates[0]}, радиусом R = {_radius} и площадью {GetArea()}\n" +
                $"Цвет: {_color}, видимость: {_visible}";
@@ -31,9 +35,5 @@ namespace Lesson6.Task_2
 
             return base.GetArea();
         }
-
-        public override ConsoleColor Color { set => _color = value; }
-        public override bool Visible { set => _visible = value; }
-        public override (double X, double Y) Coordinates { set => _coordinates.Add(value); }
     }
 }

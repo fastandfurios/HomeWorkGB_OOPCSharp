@@ -14,22 +14,17 @@ namespace Lesson6.Task_2
         private List<(double x, double y)> _vertexes = new(4);
         private double _height, _width;
 
+        public override ConsoleColor Color { set => _color = value; }
+        public override bool Visible { set => _isVisible = value; }
+        public override (double, double) Coordinates { set => _vertexes.Add(value); }
+
         public override string ToString()
             => $"Прямоугольник с вершинами в точках: {GetEntry()}\nВысота = {_height}, ширина = {_width}\n" +
                $"Цвет: {_color}, видимость: {_isVisible}\n" +
                $"Площадь = {GetArea()}";
 
-        private StringBuilder GetEntry()
-        {
-            var entry = new StringBuilder();
-
-            foreach (var vertex in _vertexes)
-            {
-                entry.Append(vertex + " ");
-            }
-
-            return entry;
-        }
+        public override void AxisShift(int x = 0, int y = 0)
+           => _vertexes = _vertexes.Select(vertex => (vertex.x + x, vertex.y + y)).ToList();
 
         protected override double GetArea()
         {
@@ -46,11 +41,16 @@ namespace Lesson6.Task_2
             return base.GetArea();
         }
 
-        public override void AxisShift(int x = 0, int y = 0) 
-            => _vertexes = _vertexes.Select(vertex => (vertex.x+x,vertex.y+y)).ToList();
+        private StringBuilder GetEntry()
+        {
+            var entry = new StringBuilder();
 
-        public override ConsoleColor Color { set => _color = value; }
-        public override bool Visible { set => _isVisible = value; }
-        public override (double, double) Coordinates { set => _vertexes.Add(value); }
+            foreach (var vertex in _vertexes)
+            {
+                entry.Append(vertex + " ");
+            }
+
+            return entry;
+        }
     }
 }
