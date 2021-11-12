@@ -8,30 +8,42 @@ namespace Lesson7.Task_1
 {
     public class BCoder : ICoder
     {
-        public StringBuilder Decode(StringBuilder entry, int index)
+        public StringBuilder Decode(StringBuilder entry, int depht)
         {
-            if (index != entry.Length - 1 - index && entry[index] != entry[entry.Length - 1 - index])
+            //TODO: переделать логику в методе
+            if (depht != entry.Length - 1 - depht &&
+                entry[depht] != entry[entry.Length - 1 - depht] &&
+                entry != null &&
+                entry.Length > 1)
             {
-                var symbol = entry[entry.Length - 1 - index];
-                entry[entry.Length - 1 - index] = entry[index];
-                entry[index] = symbol;
+                var symbol = entry[entry.Length - 1 - depht];
+                entry[entry.Length - 1 - depht] = entry[depht];
+                entry[depht] = symbol;
                 return entry;
             }
 
-            return entry;
+            throw new ArgumentException("Строка не может быть раскодирована!");
         }
 
-        public StringBuilder Encode(StringBuilder entry, int index)
+        public StringBuilder Encode(StringBuilder entry, int depht)
         {
-            if(index != entry.Length - 1 - index && entry[index] != entry[entry.Length - 1 - index])
+            //TODO: протестить метод
+            if(entry != null && entry.Length > 1)
             {
-                var symbol = entry[index];
-                entry[index] = entry[entry.Length - 1 - index];
-                entry[entry.Length - 1 - index] = symbol;
+                for (int i = 0; i < depht; i++)
+                {
+                    if(depht != entry.Length - 1 - depht && entry[depht] != entry[entry.Length - 1 - depht])
+                    {
+                        var symbol = entry[i];
+                        entry[i] = entry[entry.Length - 1 - i];
+                        entry[entry.Length - 1 - i] = symbol;
+                    }
+                }
+
                 return entry;
             }
 
-            return entry;
+            throw new ArgumentException("Строка не может быть закодирована!");
         }
     }
 }
