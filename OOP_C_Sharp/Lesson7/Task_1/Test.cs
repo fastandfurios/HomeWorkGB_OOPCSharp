@@ -10,10 +10,13 @@ namespace Lesson7.Task_1
     {
         public static void Run()
         {
-            var bcoder = new ACoder();
+            var acoder = new ACoder();
             var entry = "Привет мир!";
-            var encode = bcoder.Encode(new(entry, entry.Length), 3);
-            bcoder.Decode(encode, 3);
+            var encode = acoder.Encode(new(entry, entry.Length), 3);
+            acoder.Decode(encode, 3);
+            var bcoder = new BCoder();
+            var encode_1 = bcoder.Encode(new(entry, entry.Length), 0);
+            bcoder.Decode(encode_1, 0);
         }
     }
 }
