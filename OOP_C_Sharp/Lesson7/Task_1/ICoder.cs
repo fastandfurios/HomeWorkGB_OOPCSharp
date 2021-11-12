@@ -8,6 +8,7 @@ namespace Lesson7.Task_1
 {
     public interface ICoder
     {
-        
+        StringBuilder Decode(StringBuilder entry, int lenghtShift);
+        StringBuilder Encode(StringBuilder entry, int lenghtShift);
     }
 }
