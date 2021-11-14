@@ -1,22 +1,32 @@
 ﻿using System.Text;
+using static System.Convert;
 
 namespace Lesson7.Task_1
 {
     public class ACoder : ICoder
     {
-        /// <summary> Декодирует закодированную строку, смещая ее на n-символов вправо </summary>
+        /// <summary> Декодирует закодированную строку </summary>
         /// <param name="entry">входящая строка</param>
-        /// <param name="dephtShift">глубина кодирования (n-символов строки, которые необходимо сместить)</param>
         /// <returns>раскодированная строка</returns>
         /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо длина строки была меньше пары символов, либо строка стостояла только из символов-разделителей</exception>
-        public StringBuilder Decode(StringBuilder entry, int dephtShift)
+        public StringBuilder Decode(StringBuilder entry)
         {
-            if(!entry.IsNullOrWiteSpace() && entry.Length > 1)
+            if(!entry.IsNullOrWiteSpace())
             {
-                for (int i = 0; i < dephtShift; i++)
+                for (int i = 0; i < entry.Length; i++)
                 {
-                    entry = entry.Insert(0, entry[^1].ToString(), 1);
-                    entry = entry.Remove(entry.Length - 1, 1);
+                    if (entry[i] is 'а' or 'А' or 'a' or 'A')
+                    {
+                        entry[i] = entry[i] switch
+                        {
+                            'а' => 'я',
+                            'А' => 'Я',
+                            'a' => 'z',
+                            'A' => 'Z'
+                        };
+                    }
+                    else
+                        entry[i] = ToChar(entry[i] - 1);
                 }
 
                 return entry;
@@ -25,19 +35,28 @@ namespace Lesson7.Task_1
             throw new ArgumentException("Строка не может быть раскодирована!");
         }
 
-        /// <summary> Кодирует строку, смещая ее на n-символов влево </summary>
+        /// <summary> Кодирует строку </summary>
         /// <param name="entry">входящая строка</param>
-        /// <param name="dephtShift">глубина кодирования (n-символов строки, которые необходимо сместить)</param>
         /// <returns>закодированная строка</returns>
         /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо длина строки была меньше пары символов, либо строка стостояла только из символов-разделителей</exception>
-        public StringBuilder Encode(StringBuilder entry, int dephtShift)
+        public StringBuilder Encode(StringBuilder entry)
         {
-            if (!entry.IsNullOrWiteSpace() && entry.Length > 1)
+            if (!entry.IsNullOrWiteSpace())
             {
-                for (int i = 0; i < dephtShift; i++)
+                for (int i = 0; i < entry.Length; i++)
                 {
-                    entry = entry.Append(entry[0]);
-                    entry = entry.Remove(0, 1);
+                    if (entry[i] is 'я' or 'Я' or 'z' or 'Z')
+                    {
+                        entry[i] = entry[i] switch
+                        {
+                            'я' => 'а',
+                            'Я' => 'А',
+                            'z' => 'a',
+                            'Z' => 'A'
+                        };
+                    }
+                    else
+                        entry[i] = ToChar(entry[i] + 1);
                 }
 
                 return entry;
