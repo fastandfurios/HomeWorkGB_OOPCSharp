@@ -8,7 +8,7 @@ namespace Lesson7.Task_1
         /// <summary> Декодирует закодированную строку </summary>
         /// <param name="entry">входящая строка</param>
         /// <returns>раскодированная строка</returns>
-        /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо длина строки была меньше пары символов, либо строка стостояла только из символов-разделителей</exception>
+        /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо строка стостояла только из символов-разделителей</exception>
         public StringBuilder Decode(StringBuilder entry)
         {
             if(!entry.IsNullOrWiteSpace())
@@ -38,7 +38,7 @@ namespace Lesson7.Task_1
         /// <summary> Кодирует строку </summary>
         /// <param name="entry">входящая строка</param>
         /// <returns>закодированная строка</returns>
-        /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо длина строки была меньше пары символов, либо строка стостояла только из символов-разделителей</exception>
+        /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо строка стостояла только из символов-разделителей</exception>
         public StringBuilder Encode(StringBuilder entry)
         {
             if (!entry.IsNullOrWiteSpace())
