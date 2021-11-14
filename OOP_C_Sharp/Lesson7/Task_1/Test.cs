@@ -17,9 +17,11 @@
             Console.WriteLine($"После расшифровки: {acoder.Decode(encode)}\n");
 
             Console.WriteLine("Кодирование/расшифровка методом замены:");
-            var bcoder = new BCoder();
-            bcoder.FirstSymbolAlphabet = 'a';
-            bcoder.LastSymbolAlphabet = 'Z';
+            var bcoder = new BCoder
+            {
+                FirstSymbolAlphabet = 'a',
+                LastSymbolAlphabet = 'Z'
+            };
             entry = "Exception";
             var encode_1 = bcoder.Encode(new(entry, entry.Length));
             Console.WriteLine(@$"""{entry}"" после кодирования ""{encode_1}""");

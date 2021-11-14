@@ -8,6 +8,6 @@ namespace Lesson7.Task_1
 {
     public static class StringBuilderEx
     {
-        public static bool IsNullOrWiteSpace(this StringBuilder entry) => string.IsNullOrWhiteSpace(entry.ToString()) ? true : false;
+        public static bool IsNullOrWiteSpace(this StringBuilder entry) => string.IsNullOrWhiteSpace(entry.ToString());
     }
 }
