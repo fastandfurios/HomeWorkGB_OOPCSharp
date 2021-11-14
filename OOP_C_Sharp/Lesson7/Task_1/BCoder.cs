@@ -14,7 +14,7 @@ namespace Lesson7.Task_1
         /// <summary> Последний символ алфавита </summary>
         public char LastSymbolAlphabet { get => _lastSymbol; set => _lastSymbol = value; }
 
-        /// <summary> Декодирует закодированную строку, меняя местами начальные символы с конечными символами </summary>
+        /// <summary> Декодирует закодированную строку </summary>
         /// <param name="entry">входящая строка</param>
         /// <returns>раскодированная строка</returns>
         /// <exception cref="ArgumentException">Исключение появляется, если входящая строка была NULL, либо строка стостояла только из символов-разделителей</exception>
