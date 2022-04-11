@@ -15,7 +15,7 @@ namespace Lesson3.Task_Star
         {
             try
             {
-                var fileName = "Content.txt";
+                const string fileName = "Content.txt";
 
                 using var streamReader = new StreamReader(fileName);
 
