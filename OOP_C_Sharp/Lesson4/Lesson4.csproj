@@ -5,10 +5,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="Content.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<PropertyGroup>
+		<Nullable>warnings</Nullable>
+	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Buildings\Buildings.csproj" />
+	</ItemGroup>
 </Project>
