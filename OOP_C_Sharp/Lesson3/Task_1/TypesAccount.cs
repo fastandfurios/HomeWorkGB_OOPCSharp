@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson2
+namespace Lesson3.Task_1
 {
     public enum TypesAccount
     {
