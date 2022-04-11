@@ -19,13 +19,10 @@ namespace Lesson3.Task_Star
 
                 using var streamReader = new StreamReader(fileName);
 
-                string line;
-                string entry = String.Empty;
-
-                while ((line = streamReader.ReadLine()) != null)
-                {
-                    entry += line + "\n";
-                }
+                var buffer = new StringBuilder();
+                while(streamReader.ReadLine() is { } line)
+                    buffer.AppendLine(line);
+                entry = buffer.ToString();
 
                 return entry;
             }
