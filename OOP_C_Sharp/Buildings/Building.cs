@@ -29,7 +29,7 @@ namespace Buildings
             _numberEntrances = numberEntrances;
         }
 
-        /// <summary> Генерирует номер здания </summary>
+        /// <summary> Получить новый номер здания </summary>
         private static int GenerateId() => ++_id;
 
         /// <summary> Возвращает высоту этажа здания </summary>
